@@ -4,6 +4,9 @@ const totalSlides = slides.length;
 
 document.getElementById('carousel-button-next').addEventListener('click', moveToNextSlide);
 document.getElementById('carousel-button-prev').addEventListener('click', moveToPrevSlide);
+document.getElementById('carousel-first-dot').addEventListener('click',()=>{moveSlideToGivePosition(0)});
+document.getElementById('carousel-second-dot').addEventListener('click',()=>{moveSlideToGivePosition(1)});
+document.getElementById('carousel-third-dot').addEventListener('click',()=>{moveSlideToGivePosition(2)});
 
 function hideAllSlides() {
     for (let slide of slides) {
@@ -35,3 +38,12 @@ function moveToPrevSlide() {
     
     slides[slidePosition].classList.add("carousel-item-visible");
 }
+
+
+function moveSlideToGivePosition($slidePosition) {
+    hideAllSlides();
+    slidePosition = $slidePosition;
+    slides[slidePosition].classList.add("carousel-item-visible");
+}
+
+
